@@ -34,7 +34,12 @@ for i in range(10):
     else:
         n=5
         text = "B"
-    hit = int(input(f"Spelare {text}, Aim nr {i//2+1} at target: "))
+    hit = "tjena mittbean"
+    while not (type(hit) == int):            
+        try:
+            hit = int(input(f"Spelare {text}, Aim nr {i//2+1} at target: "))
+        except ValueError:
+            print("Vilken måltavla är det?")
     if not randint(0,3)==0:
         if targetsAll[hit-1+n]:
             print("Den träffade du ju redan")
